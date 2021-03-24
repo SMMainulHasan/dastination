@@ -4,7 +4,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Description from "./components/Description/Description";
+import Destination from "./components/Destination/Destination";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
@@ -21,8 +21,8 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <Route path="/vehicle-:type">
-            <Description></Description>
+          <Route path="/vehicle-:vehicleType">
+            <Destination></Destination>
           </Route>
           <Route path="/login">
             <Login></Login>

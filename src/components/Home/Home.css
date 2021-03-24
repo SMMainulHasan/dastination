@@ -28,6 +28,9 @@
 @media screen and (max-width: 600px){
     .home{
         padding: 10vh 50px;
+        background-size:contain;
+        background-repeat:repeat;
+        height: 100%;
     }
   }
   

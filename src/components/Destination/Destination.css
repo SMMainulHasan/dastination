@@ -1,0 +1,43 @@
+.destination{
+    margin: 10vh 15vh ;
+    border-top: 1px solid gray;
+    position: absolute;
+    width: 85%;
+}
+.location-search{
+    background-color: lightgray;
+    margin-top: 4vh;
+    width: 50vh;
+    padding: 5vh;
+    border-radius: 2vh;
+}
+.location-search input{
+    margin-bottom: 2vh;
+    width:44vh ;
+    height: 2vh;
+    padding: 3vh;
+    border: none;
+    border-radius: 1vh;
+}
+.location-search button{
+    background-color: orangered;
+    width:50vh ;
+    height: 5vh;
+    border: none;
+    border-radius: 1vh;
+}
+.from-to{
+    margin-top: 5vh;
+    background-color:orangered;
+    color: white;
+    font-size: 20px;
+    border-radius: 2vh;
+}
+.vertical-line{
+    height: 8vh;
+    width: 2px;
+    background-color: white;
+    position: relative;
+    top: 10.5vh;
+    left: -2.92vh;
+}
