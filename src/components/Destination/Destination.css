@@ -27,7 +27,8 @@
     border-radius: 1vh;
 }
 .from-to{
-    margin-top: 5vh;
+    margin-top: 2vh;
+    padding: 3vh 0;
     background-color:orangered;
     color: white;
     font-size: 20px;
@@ -37,7 +38,24 @@
     height: 8vh;
     width: 2px;
     background-color: white;
-    position: relative;
-    top: 10.5vh;
-    left: -2.92vh;
+    position: absolute;
+    top: 16.5vh;
+    left: 8.5vh;
+}
+.available-vehicle{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    background-color: #fff;
+    border-radius: 1vh;
+    padding: 2vh 5vh;
+    font-size: large;
+    margin-top: 2vh;
+}
+.available-vehicle img{
+   width: 8vh;
+}
+.available-vehicle h5{
+    display: flex;
+    align-items: center;
 }

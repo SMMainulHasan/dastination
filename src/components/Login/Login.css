@@ -1,0 +1,30 @@
+.login{
+    padding-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vh;
+    margin: auto;
+}
+.create-account{
+    padding: 50px;
+    background-color: lightgray;
+    border: 1px solid gray  ;
+}
+.google-btn img{
+    width: 4vh;
+}
+.google-btn{
+    display: flex;
+    align-items: center;
+    padding: 2vh;
+    border: 1px solid gray;
+    border-radius:50vh;
+}
+.log-in-link{
+    color: blue;
+    font-weight: 700;
+}
+.log-in-link:hover{
+    cursor: pointer;
+}
