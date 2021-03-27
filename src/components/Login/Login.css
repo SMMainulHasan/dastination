@@ -31,3 +31,9 @@
 .log-in-link:hover{
     cursor: pointer;
 }
+.error{
+    color: red;
+}
+.success{
+    color: rgb(60, 192, 60);
+}

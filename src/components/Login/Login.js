@@ -69,11 +69,16 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           updateUserName(createUser.name);
-          console.log("created", user);
+          const newUser = {...createUser};
+          newUser.error = '';
+          newUser.success = true;
+          setCreateUser(newUser);
         })
         .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
+          const newUser = {...createUser};
+          newUser.error = error.message;
+          newUser.success = false;
+          setCreateUser(newUser);
         });
     }
     e.preventDefault();
@@ -85,11 +90,18 @@ const Login = () => {
       .signInWithEmailAndPassword(createUser.email, createUser.password)
       .then((userCredential) => {
         var { displayName, email } = userCredential.user;
-        setUserInfo({name:displayName, email:email});
+        setUserInfo({name:displayName, email:email, error:'', success:true});
+        // const newUserInfo = {...userInfo};
+        // newUserInfo.error = '';
+        // newUserInfo.success = true;
+        //   setUserInfo(newUserInfo);
+        //   console.log(displayName)
       })
       .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        const newUserInfo = {...userInfo};
+        newUserInfo.error = error.message;
+        newUserInfo.success = false;
+          setUserInfo(newUserInfo);
       });
       e.preventDefault();
   };
@@ -130,6 +142,10 @@ const Login = () => {
             Don't have an account?
             <span onClick={toggleLogin} className="log-in-link"> Create an account</span>
           </p>
+          <br/>
+          {
+              userInfo.success? <h4 className="success">Login Successful !</h4> : <h5 className="error">{userInfo.error}</h5>
+          }
         </form>
       : <form className="create-account">
           <h3>Create an account</h3>
@@ -149,6 +165,10 @@ const Login = () => {
             Already have an account?
             <span onClick={toggleLogin} className="log-in-link"> Login</span>
           </p>
+          <br/>
+          {
+              createUser.success? <h4 className="success">Account created successfully !</h4> : <h5 className="error">{createUser.error}</h5>
+          }
         </form>
       }
       <p>Or</p>
@@ -157,7 +177,6 @@ const Login = () => {
         {" "}
         <img src={google} alt="" /> &nbsp; &nbsp; Continue with Google
       </p>
-      <h5></h5>
     </div>
   );
 };
