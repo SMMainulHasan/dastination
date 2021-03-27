@@ -21,6 +21,9 @@
     border: 1px solid gray;
     border-radius:50vh;
 }
+.google-btn:hover{
+    cursor: pointer;
+}
 .log-in-link{
     color: blue;
     font-weight: 700;

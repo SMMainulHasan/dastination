@@ -23,7 +23,6 @@ const Destination = () => {
             return vehicleToDisplay = vehicle ;
         }
     })
-    console.log(clickedSearch);
     const {image, set, type, rent} = vehicleToDisplay;
     return (
         <div className="destination">

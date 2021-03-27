@@ -12,7 +12,7 @@ import Login from "./components/Login/Login";
 export const userContext = createContext();
 
 function App() {
-  const [userInfo, setUserInfo] = useState();
+  const [userInfo, setUserInfo] = useState({name:'', email:''});
   return (
     <userContext.Provider value={[userInfo, setUserInfo]}>
       <Router>
