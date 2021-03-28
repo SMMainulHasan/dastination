@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { userContext } from "../../App";
 
 const Header = () => {
-  const [userInfo, setUserInfo] = useContext(userContext);
+  const [userInfo] = useContext(userContext);
   return (
     <nav className="navigation">
       <h1 className="logo">Destination</h1>
@@ -15,10 +15,11 @@ const Header = () => {
         <li>
           <Link to="/contact">Contact</Link>
         </li>
-        <li>
-          <Link to="/login">Log in</Link>
-        </li>
-        <li>{userInfo.name}</li>
+        {
+          userInfo.name
+          ? <li className="user-name">{userInfo.name}</li>
+          : <li className="user-name"><Link to="/login">Login</Link></li>
+        }
       </ul>
     </nav>
   );

@@ -1,8 +1,14 @@
 .destination{
+    display: flex;
     margin: 10vh 15vh ;
     border-top: 1px solid gray;
     position: absolute;
     width: 85%;
+}.map{
+    margin: 4vh 0 0 5vh;
+    border: none;
+    border-radius: 2vh;
+    width: 130vh;
 }
 .location-search{
     background-color: lightgray;
@@ -58,4 +64,18 @@
 .available-vehicle h5{
     display: flex;
     align-items: center;
+}
+@media screen and (max-width: 600px){
+    .destination{
+        display: block;
+        margin: 10vh 9vh ;
+        border-top: 1px solid gray;
+        position: absolute;
+        width: 85%;
+    }.map{
+        margin: 4vh 0 0 0;
+        border: none;
+        border-radius: 2vh;
+        width: 60vh;
+    }
 }

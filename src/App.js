@@ -8,6 +8,7 @@ import Destination from "./components/Destination/Destination";
 import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 export const userContext = createContext();
 
@@ -21,9 +22,9 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <Route path="/vehicle-:vehicleType">
+          <PrivateRoute path="/vehicle-:vehicleType">
             <Destination></Destination>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>

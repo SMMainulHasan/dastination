@@ -7,12 +7,16 @@ import firebaseConfig from "../../../src/firebaseConfig";
 import { useControlled } from "@material-ui/core";
 import { userContext } from "../../App";
 import { faClosedCaptioning } from "@fortawesome/free-solid-svg-icons";
+import { useHistory, useLocation } from "react-router";
 
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
 const Login = () => {
+  const history = useHistory();
+  const location = useLocation();
+  let {from} = location.state || {from: {pathname:"/"}};
   const [createUser, setCreateUser] = useState({
     name: "",
     email: "",
@@ -29,6 +33,7 @@ const Login = () => {
       .then((result) => {
         const { displayName, email } = result.user;
         setUserInfo({ name: displayName, email: email });
+        history.replace(from);
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -91,6 +96,7 @@ const Login = () => {
       .then((userCredential) => {
         var { displayName, email } = userCredential.user;
         setUserInfo({name:displayName, email:email, error:'', success:true});
+        history.replace(from);
         // const newUserInfo = {...userInfo};
         // newUserInfo.error = '';
         // newUserInfo.success = true;
@@ -133,7 +139,7 @@ const Login = () => {
           <br />
           <input onBlur={inputHandler} className="input" name="email" required type="text" placeholder="Email"/>
           <br />
-          <input onBlur={inputHandler} className="input" name="password" required type="text" placeholder="Password"/>
+          <input onBlur={inputHandler} className="input" name="password" required type="password" placeholder="Password"/>
           <br />
           <input className="button" onClick={handleLoginSubmit} required type="submit" value="Login"/>
           <br />
@@ -154,9 +160,9 @@ const Login = () => {
           <br />
           <input onBlur={inputHandler} className="input" name="email" required type="text" placeholder="Email"/>
           <br />
-          <input onBlur={inputHandler} className="input" name="password" required type="text" placeholder="Password"/>
+          <input onBlur={inputHandler} className="input" name="password" required type="password" placeholder="Password"/>
           <br />
-          <input onBlur={inputHandler} className="input" name="confirmPassword" required type="text" placeholder="Confirm password"/>
+          <input onBlur={inputHandler} className="input" name="confirmPassword" required type="password" placeholder="Confirm password"/>
           <br />
           <input className="button" onClick={handleSubmit} required type="submit" value="Create an account"/>
           <br />

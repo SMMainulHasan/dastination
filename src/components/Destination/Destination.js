@@ -62,8 +62,9 @@ const Destination = () => {
                 <button onClick={handleSearchBtn}>Search</button>
              </>
             } 
-                
             </div>
+            <iframe className="map" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d58411.91863502084!2d90.40289326111213!3d23.792096233301667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1616924400134!5m2!1sen!2sbd" width="600" height="500" allowfullscreen="" loading="lazy"></iframe>
+            
         </div>
     );
 };

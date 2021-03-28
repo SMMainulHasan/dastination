@@ -31,6 +31,14 @@
     text-decoration: none;
     font-size: 18px;
   }
+  .user-name{
+    margin: 5px;
+    padding: 5px;
+    background-color: orangered;
+    color: white;
+    border-radius: 50vh;
+
+  }
   @media screen and (max-width: 600px){
     .navigation {
       margin: 0 1vh;
